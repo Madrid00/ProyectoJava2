@@ -5,6 +5,9 @@
  */
 package proyectojava2;
 
+import javafx.beans.binding.Bindings;
+import static javafx.beans.binding.Bindings.select;
+
 /**
  *
  * @author Gerardo.Rios
@@ -15,15 +18,15 @@ public class Respuestas extends javax.swing.JFrame {
      * Creates new form respuestas
      */
     public Respuestas(int correctas) {
-        initComponents();
-        jLabel1.setText("Tus respuestas correctas son: " + correctas );
-        
+         correctas = 0;
     }
-     
-    public Respuestas() {
-    initComponents();
+         
+    public Respuestas(){
         
-  }
+         initComponents();
+         
+         
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

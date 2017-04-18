@@ -5,6 +5,7 @@
  */
 package proyectojava2;
 
+import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import proyectojava2.GenerarCuestionario;
@@ -121,13 +122,13 @@ public class PruebaCuestionario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(tiempoRes)
-                .addGap(118, 118, 118)
+                .addGap(103, 103, 103)
                 .addComponent(Siguiente)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(opcion2)
@@ -146,15 +147,14 @@ public class PruebaCuestionario extends javax.swing.JFrame {
                 .addComponent(opcion2)
                 .addGap(30, 30, 30)
                 .addComponent(opcion3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(tiempoRes)
                         .addGap(50, 50, 50))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(Siguiente)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(29, 29, 29))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -189,17 +189,17 @@ public class PruebaCuestionario extends javax.swing.JFrame {
        opcion1.setText(p1.getPreguntas().get(posicion).getOpcion().get(0).getTitulo());
        opcion2.setText(p1.getPreguntas().get(posicion).getOpcion().get(1).getTitulo());
        opcion3.setText(p1.getPreguntas().get(posicion).getOpcion().get(2).getTitulo());
-       if (opcion1.isSelected()) {
+       if (opcion1.isSelected() == true) {
        if(p1.getPreguntas().get(posicion).getOpcion().get(0).isRespuesta()){
        correctas ++;
        }
        }
-       if (opcion2.isSelected()) {
+       if (opcion2.isSelected() == true) {
        if(p1.getPreguntas().get(posicion).getOpcion().get(1).isRespuesta()){
        correctas ++;
        }
        }
-       if (opcion3.isSelected()) {
+       if (opcion3.isSelected() == true) {
        if(p1.getPreguntas().get(posicion).getOpcion().get(2).isRespuesta()){
        correctas ++;
        }
@@ -209,13 +209,14 @@ public class PruebaCuestionario extends javax.swing.JFrame {
        
        }
        else{
-           Respuestas r = new Respuestas(correctas);
-           r.setVisible(true);
+           //Respuestas r = new Respuestas(correctas);
+           //r.setVisible(true);
            System.out.println(correctas);
+           correctas ++;
+          JOptionPane.showInputDialog("Tus respuestas correctas fueron: " + correctas);
            dispose();
-           
-           
-       }
+           }
+      
        buttonGroup1.clearSelection();
        segundo=0;
        
